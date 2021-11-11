@@ -1,6 +1,6 @@
 // dataFunctions.js
 
-getTodos = async () => {
+export const getTodos = async () => {
     try {
         let data = await fetch('https://api.npoint.io/3ae3c2ea5fdf9cbe4fd1');
 
@@ -14,7 +14,7 @@ getTodos = async () => {
     }
 }
 
-const deleteTodo = async () => {
+export const deleteTodo = async () => {
     await getTodos()
     .then((todos) => {
         return new Promise((resolve, reject) => {
@@ -41,7 +41,7 @@ const deleteTodo = async () => {
     .catch(err => console.log(err));
 }
 
-postTodos = async (newTodos) => {
+const postTodos = async (newTodos) => {
     try {
         await fetch('https://api.npoint.io/3ae3c2ea5fdf9cbe4fd1', {
             method: 'POST',
