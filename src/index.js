@@ -17,6 +17,7 @@ https://www.npoint.io/docs/3ae3c2ea5fdf9cbe4fd1
 import { getTodos, deleteTodo } from './dataFunctions';
 import { dataContainer, clearButton } from './domLoader';
 import "./styles/styles.css";
+import "./styles/main.scss";
 
 const renderData = async () => {
     let data = await getTodos();
@@ -30,14 +31,16 @@ const renderData = async () => {
         id = todo.id;
         title = todo.title;
         completed = todo.completed;
-
-        injectable += "ID: " + id;
-        injectable += "<br>"
-        injectable += "Title: " + title;
-        injectable += "<br>"
-        injectable += "Completed: " + completed;
-        injectable += "<br>"
-        injectable += "<br><hr><br>";
+        injectable += (
+            "<div class='todo-container'><div>ID: " + id + "</div><div>Title: " + title + "</div><div>Completed: " + completed + "</div></div>"
+        )
+        // injectable += "ID: " + id;
+        // injectable += "<br>"
+        // injectable += "Title: " + title;
+        // injectable += "<br>"
+        // injectable += "Completed: " + completed;
+        // injectable += "<br>"
+        // injectable += "<br><hr><br>";
 
         dataContainer.innerHTML = injectable;
     });
