@@ -16,7 +16,7 @@ https://www.npoint.io/docs/3ae3c2ea5fdf9cbe4fd1
 
 import { getTodos, deleteTodo } from './dataFunctions';
 import { dataContainer, clearButton } from './domLoader';
-import "./styles.css";
+import "./styles/styles.css";
 
 const renderData = async () => {
     let data = await getTodos();
