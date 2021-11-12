@@ -1,6 +1,6 @@
-$bg-dark: #2c2c2c;
-$blue-text: rgb(0, 60, 213);
-$light-blue: rgb(124, 175, 250);
+@import './mixins'; /* Mixins */
+@import './variables'; /* Variables */
+@import './button'; /* Multiple files with import */
 
 * {
     margin: 0px;
@@ -13,23 +13,23 @@ body {
     font-size: 25px;
 }
 #header {
-    h1 {
+    background: black;
+    padding: 25px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    h1 { /* Nesting */
         color: $blue-text;
     }
 }
-#clear-button {
-    border: none;
-    border-radius: 0px;
-    outline: 0;
-    padding: 15px;
-    width: 200px;
-    background: $light-blue;
-    box-shadow: 2px 2px 4px $blue-text;
-}
+
 #data-container {
     margin-top: 50px;
 
     .todo-container {
+        @include flexCenter(none); /* Mixins with parameters */
+
         border: 1px solid $blue-text;
         margin: 5px;
         color: $light-blue;
@@ -37,7 +37,6 @@ body {
         margin-left: auto;
         margin-right: auto;
         padding: 15px;
-        display: flex;
         flex-wrap: wrap;
 
         div {
@@ -45,4 +44,11 @@ body {
             margin: 3px;
         }
     }
+}
+
+footer {
+    @extend #header; /* Extensions */
+    color: white;
+    margin-top: 25px + 25px; /* Math Calculations */
+    background: darkblue; /* Overwrite extensions */
 }

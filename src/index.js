@@ -34,13 +34,6 @@ const renderData = async () => {
         injectable += (
             "<div class='todo-container'><div>ID: " + id + "</div><div>Title: " + title + "</div><div>Completed: " + completed + "</div></div>"
         )
-        // injectable += "ID: " + id;
-        // injectable += "<br>"
-        // injectable += "Title: " + title;
-        // injectable += "<br>"
-        // injectable += "Completed: " + completed;
-        // injectable += "<br>"
-        // injectable += "<br><hr><br>";
 
         dataContainer.innerHTML = injectable;
     });

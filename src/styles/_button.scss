@@ -1,0 +1,18 @@
+@import './variables';
+
+#clear-button {
+    border: none;
+    border-radius: 0px;
+    outline: 0;
+    padding: 15px;
+    width: 200px;
+    background: $light-blue;
+    box-shadow: 2px 2px 4px $blue-text;
+
+    &:hover {
+        background: $blue-text;
+        cursor: pointer;
+        box-shadow: 2px 2px 4px white;
+        color: white;
+    }
+}
