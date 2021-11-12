@@ -5,7 +5,7 @@ export const getTodos = async () => {
         let data = await fetch('https://api.npoint.io/3ae3c2ea5fdf9cbe4fd1');
 
         if(!data.ok) {
-            throw new Error("eek");
+            throw new Error("Error");
         }
 
         return data.json();
